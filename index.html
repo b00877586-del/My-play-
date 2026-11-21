@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>ملف المحقق السري</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- شاشة الترحيب -->
+
+    <section id="welcome" class="screen active">
+
+        <div class="detective">🕵️‍♂️</div>
+
+        <h1>أكاديمية المحققين</h1>
+
+        <h2>ملف الانضمام إلى وحدة التحقيقات السرية</h2>
+
+        <div class="rules">
+
+            <h3>📜 شروط الحصول على شارة المحققين</h3>
+
+            <p>1- عليك حل القضايا الثلاث بنجاح.</p>
+
+            <p>2- فكّر جيدًا قبل اختيار إجابتك.</p>
+
+            <p>3- إجابة خاطئة تعني خسارة الشارة.</p>
+
+            <p>4- لا يمكنك العودة إلى القضية السابقة.</p>
+
+            <p class="warning">
+                هل تمتلك مهارات المحققين؟
+            </p>
+
+        </div>
+
+        <button onclick="showScreen('doorScreen')">
+            جاهز للمهمة؟
+        </button>
+
+    </section>
+
+
+    <!-- شاشة الباب -->
+
+    <section id="doorScreen" class="screen">
+
+        <div class="door-icon">🚪</div>
+
+        <h1>أمامك ثلاث قضايا غامضة...</h1>
+
+        <p>خلف هذا الباب تنتظرك الحقيقة.</p>
+
+        <button onclick="startGame()">
+            ابدأ التحقيق
+        </button>
+
+    </section>
+
+
+    <!-- شاشة الأسئلة -->
+
+    <section id="gameScreen" class="screen">
+
+        <header class="game-header">
+
+            <h2>🕵️ وحدة التحقيقات السرية</h2>
+
+            <div id="progress">
+                القضية 1 من 3
+            </div>
+
+        </header>
+
+        <div class="case-file">
+
+            <div class="case-title">
+                <span>📁</span>
+                <h2 id="questionTitle">القضية الأولى</h2>
+            </div>
+
+            <div id="questionText" class="question-text">
+                نص السؤال سيظهر هنا.
+            </div>
+
+            <div id="options" class="options">
+                <!-- الاختيارات تظهر بواسطة JavaScript -->
+            </div>
+
+            <div id="feedback"></div>
+
+        </div>
+
+    </section>
+
+
+    <!-- شاشة الخسارة -->
+
+    <section id="loseScreen" class="screen">
+
+        <div class="result-icon">💔</div>
+
+        <h1>انتهى التحقيق!</h1>
+
+        <h2>للأسف، خسرت شارة المحققين.</h2>
+
+        <p>لقد أخفقت في كشف الحقيقة هذه المرة.</p>
+
+        <button onclick="restartGame()">
+            حاول مرة أخرى
+        </button>
+
+    </section>
+
+
+    <!-- شاشة الفوز -->
+
+    <section id="winScreen" class="screen">
+
+        <div class="confetti">🎉 🏆 🎉</div>
+
+        <div class="badge">🛡️</div>
+
+        <h1>مبرووووك أيها المحقق!</h1>
+
+        <h2>لقد نجحت في حل القضايا الثلاث.</h2>
+
+        <p>أثبتَّ جدارتك وأصبحت عضوًا في وحدة التحقيقات السرية.</p>
+
+        <div class="gold-badge">
+            ⭐ محقق معتمد ⭐
+        </div>
+
+        <button onclick="restartGame()">
+            العب من جديد
+        </button>
+
+    </section>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
