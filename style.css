@@ -1,0 +1,396 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Cairo', sans-serif;
+    background: #080d16;
+    color: #f1f1f1;
+    min-height: 100vh;
+}
+
+/* الشاشات */
+
+.screen {
+    display: none;
+    min-height: 100vh;
+    width: 100%;
+    padding: 30px 18px;
+    text-align: center;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.screen.active {
+    display: flex;
+    animation: appear 0.8s ease;
+}
+
+@keyframes appear {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* شاشة الترحيب */
+
+#welcome {
+    background:
+        radial-gradient(circle at top, #263c57, transparent 55%),
+        #080d16;
+}
+
+.detective {
+    font-size: 90px;
+    margin-bottom: 10px;
+    filter: drop-shadow(0 0 15px #7ca7d5);
+}
+
+h1 {
+    color: #e4bd63;
+    font-size: clamp(26px, 5vw, 38px);
+    margin-bottom: 12px;
+}
+
+h2 {
+    font-size: 19px;
+    color: #d9e4ef;
+    line-height: 1.8;
+}
+
+.rules {
+    width: 100%;
+    max-width: 520px;
+    margin: 25px auto;
+    padding: 25px 20px;
+
+    background: rgba(24, 37, 53, 0.9);
+
+    border: 1px solid #9d824d;
+    border-radius: 14px;
+
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.5);
+
+    text-align: right;
+}
+
+.rules h3 {
+    color: #e4bd63;
+    margin-bottom: 18px;
+    text-align: center;
+}
+
+.rules p {
+    color: #d8e0e9;
+    margin: 12px 0;
+    line-height: 1.9;
+    font-size: 15px;
+}
+
+.rules .warning {
+    color: #e4bd63;
+    text-align: center;
+    font-weight: bold;
+    margin-top: 22px;
+}
+
+/* الأزرار */
+
+button {
+    font-family: 'Cairo', sans-serif;
+
+    padding: 12px 35px;
+
+    background: linear-gradient(135deg, #d5ad57, #96702e);
+
+    color: #101722;
+
+    border: none;
+    border-radius: 9px;
+
+    font-size: 17px;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    box-shadow: 0 0 15px rgba(212, 174, 88, 0.3);
+
+    transition: 0.3s;
+}
+
+button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 25px rgba(212, 174, 88, 0.6);
+}
+
+/* شاشة الباب */
+
+#doorScreen {
+    background:
+        radial-gradient(circle, #253c57, transparent 55%),
+        #080d16;
+}
+
+.door-icon {
+    font-size: 130px;
+    margin-bottom: 25px;
+    filter: drop-shadow(0 0 20px #c59d53);
+}
+
+#doorScreen p {
+    color: #b9c8d8;
+    margin: 20px 0;
+    font-size: 18px;
+}
+
+/* شاشة التحقيق */
+
+#gameScreen {
+    justify-content: flex-start;
+    background:
+        radial-gradient(circle at top, #1c2d42, transparent 50%),
+        #080d16;
+}
+
+.game-header {
+    width: 100%;
+    max-width: 700px;
+    margin-bottom: 25px;
+}
+
+.game-header h2 {
+    color: #e4bd63;
+    font-size: 23px;
+}
+
+#progress {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 7px 22px;
+
+    background: #263a51;
+    border: 1px solid #a88a4d;
+    border-radius: 25px;
+
+    color: #e7d3a3;
+}
+
+/* ملف القضية */
+
+.case-file {
+    width: 100%;
+    max-width: 650px;
+
+    padding: 25px 20px;
+
+    background: #131e2c;
+
+    border: 1px solid #8d774c;
+    border-radius: 15px;
+
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+}
+
+.case-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
+    padding-bottom: 18px;
+    border-bottom: 1px solid #39495a;
+}
+
+.case-title span {
+    font-size: 28px;
+}
+
+.case-title h2 {
+    color: #e4bd63;
+}
+
+.question-text {
+    margin: 25px 0;
+    padding: 20px;
+
+    background: #202e40;
+
+    border-right: 4px solid #c6a052;
+    border-radius: 8px;
+
+    text-align: right;
+
+    color: #edf2f7;
+    font-size: 16px;
+    line-height: 2.1;
+    white-space: pre-line;
+}
+
+/* الاختيارات */
+
+.options {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.option {
+    width: 100%;
+    padding: 14px;
+
+    background: #26384d;
+    color: white;
+
+    border: 1px solid #526a82;
+    border-radius: 9px;
+
+    font-size: 16px;
+    font-family: 'Cairo', sans-serif;
+
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.option:hover:not(:disabled) {
+    background: #385473;
+    border-color: #e4bd63;
+    transform: translateX(-4px);
+}
+
+.option:disabled {
+    cursor: default;
+    opacity: 0.7;
+}
+
+/* رسائل الإجابة */
+
+#feedback {
+    margin-top: 20px;
+    font-size: 19px;
+    font-weight: bold;
+    line-height: 2;
+}
+
+.correct {
+    color: #75e6a1;
+}
+
+.wrong {
+    color: #ff7777;
+}
+
+/* شاشة الخسارة */
+
+#loseScreen {
+    background:
+        radial-gradient(circle, #4a1920, transparent 60%),
+        #080d16;
+}
+
+.result-icon {
+    font-size: 85px;
+    margin-bottom: 20px;
+}
+
+#loseScreen h1 {
+    color: #ff7777;
+}
+
+#loseScreen p {
+    margin: 20px 0;
+    color: #d2d2d2;
+}
+
+/* شاشة الفوز */
+
+#winScreen {
+    background:
+        radial-gradient(circle, #53421d, transparent 60%),
+        #080d16;
+}
+
+.confetti {
+    font-size: 38px;
+    margin-bottom: 20px;
+}
+
+.badge {
+    font-size: 100px;
+    filter: drop-shadow(0 0 20px gold);
+    animation: badgeGlow 2s infinite alternate;
+}
+
+@keyframes badgeGlow {
+    from {
+        transform: scale(1);
+        filter: drop-shadow(0 0 10px gold);
+    }
+
+    to {
+        transform: scale(1.12);
+        filter: drop-shadow(0 0 30px gold);
+    }
+}
+
+#winScreen h1 {
+    color: #ffdc7d;
+}
+
+#winScreen p {
+    max-width: 450px;
+    margin: 20px auto;
+    line-height: 2;
+}
+
+.gold-badge {
+    margin: 20px 0 30px;
+    padding: 14px 28px;
+
+    border: 2px solid gold;
+    border-radius: 12px;
+
+    color: #ffdf82;
+    background: rgba(120, 88, 23, 0.3);
+
+    font-size: 20px;
+    font-weight: bold;
+
+    box-shadow: 0 0 20px rgba(255, 215, 0, 0.3);
+}
+
+/* الهواتف */
+
+@media (max-width: 500px) {
+
+    .detective {
+        font-size: 75px;
+    }
+
+    .rules {
+        padding: 20px 15px;
+    }
+
+    .case-file {
+        padding: 18px 13px;
+    }
+
+    .question-text {
+        font-size: 14px;
+    }
+
+    .option {
+        font-size: 14px;
+    }
+
+  }
